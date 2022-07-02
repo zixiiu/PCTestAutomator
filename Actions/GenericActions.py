@@ -21,6 +21,10 @@ class GenericActions():
         pass
 
     @abstractmethod
+    def ms_ppt_actions(self):
+        pass
+
+    @abstractmethod
     def type_and_remove(self):
         pass
 
@@ -29,7 +33,11 @@ class GenericActions():
         pass
 
     @abstractmethod
-    def launch_browser(self, url):
+    def ms_excel_cal(self):
+        pass
+
+    @abstractmethod
+    def launch_browser(self):
         pass
 
     @abstractmethod
@@ -38,5 +46,17 @@ class GenericActions():
 
     @abstractmethod
     def browser_browse(self):
+        pass
+
+    @abstractmethod
+    def browser_search(self, kw):
+        pass
+
+    @abstractmethod
+    def launch_qq(self):
+        pass
+
+    @abstractmethod
+    def launch_netease_music(self):
         pass
 

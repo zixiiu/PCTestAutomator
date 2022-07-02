@@ -12,7 +12,7 @@ urls = ['jd.com', 'taobao.com', 'sina.com', '163.com', 'ithome.com', 'https://ww
 
 for idx, url in enumerate(urls):
         if idx == 0:
-                a.launch_browser(url)
+                a.launch_browser()
                 a.browser_browse()
         else:
                 a.browser_new_tab(url)

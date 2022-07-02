@@ -12,8 +12,8 @@ class Windows(Actions.GenericActions.GenericActions):
 
     def type_and_remove(self):
         to_type = 'Geekerwan 1m sub!'
-        pg.typewrite(to_type, interval=0.5)
-        pg.typewrite(['backspace' for _ in range(len(to_type))], interval=0.5)
+        pg.typewrite(to_type, interval=0.1)
+        pg.typewrite(['backspace' for _ in range(len(to_type))], interval=0.1)
 
     def launch_ms_word(self):
         self.launch_app_with_search('Microsoft Word')
@@ -39,11 +39,11 @@ class Windows(Actions.GenericActions.GenericActions):
         time.sleep(5)
         pg.hotkey('ctrl', 'p')
 
-    def launch_browser(self, url):
+    def launch_browser(self):
         self.launch_app_with_search('Microsoft Edge')
-        pg.hotkey('ctrl', 'l')
-        pg.typewrite(url, interval=0.05)
-        pg.typewrite(['enter'])
+        # pg.hotkey('ctrl', 'l')
+        # pg.typewrite(url, interval=0.05)
+        # pg.typewrite(['enter'])
 
     def browser_new_tab(self, url):
         pg.hotkey('ctrl', 't')
