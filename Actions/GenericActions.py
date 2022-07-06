@@ -57,6 +57,18 @@ class GenericActions():
         pass
 
     @abstractmethod
+    def qq_go_to_chat(self):
+        pass
+
+    @abstractmethod
     def launch_netease_music(self):
+        pass
+
+    @abstractmethod
+    def quit(self):
+        pass
+
+    @abstractmethod
+    def quit_no_save(self):
         pass
 

@@ -35,7 +35,7 @@ def browser_url_loop_until(start_time, urls, a: Actions.GenericActions.GenericAc
 
 
 def wait_until(start_time, test_flag, until):
-    until = time.time() + 30 if test_flag else until
+    until = time.time() - start_time + 30 if test_flag else until
     logging.info('Will wait until %dm%ds' % divmod(until, 60))
     while time.time() < start_time + until:
         time.sleep(1)

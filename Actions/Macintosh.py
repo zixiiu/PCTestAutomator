@@ -12,7 +12,7 @@ class Mac(Actions.GenericActions.GenericActions):
 
     def launch_ms_word(self):
         self.launch_app_with_search('Microsoft Word')
-        time.sleep(1)
+        time.sleep(10)
         pg.press('return')
 
     def ms_ppt_actions(self):
@@ -24,7 +24,7 @@ class Mac(Actions.GenericActions.GenericActions):
 
     def launch_ms_ppt(self):
         self.launch_app_with_search('Microsoft Powerpoint')
-        time.sleep(1)
+        time.sleep(10)
         pg.press('tab')
         pg.press('return')
 
@@ -35,7 +35,7 @@ class Mac(Actions.GenericActions.GenericActions):
 
     def launch_ms_excel(self):
         self.launch_app_with_search('Microsoft Excel')
-        time.sleep(1)
+        time.sleep(10)
         pg.press('tab')
         pg.press('return')
 
@@ -74,10 +74,27 @@ class Mac(Actions.GenericActions.GenericActions):
     def launch_qq(self):
         self.launch_app_with_search('qq')
 
+    def qq_go_to_chat(self):
+        with pg.hold('option'):
+            pg.press('o')
+        pg.typewrite('IM')
+        pg.press('enter')
+        # pg.hotkey('option', 'o')
+
     def launch_netease_music(self):
         self.launch_app_with_search('neteasemusic')
         pg.sleep(2)
         pg.press('space')
+
+    def quit(self):
+        pg.hotkey('command', 'q')
+
+    def quit_no_save(self):
+        pg.hotkey('command', 'q')
+        pg.hotkey('command', 'd')
+
+
+
 
 
 
