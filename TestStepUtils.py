@@ -5,7 +5,7 @@ import Actions.GenericActions
 
 
 def loop_until(start_time, f, test_flag, until):
-    remain = 5
+    remain = 3
     while remain > 0 and time.time() < start_time + until:
         f()
         if test_flag:
@@ -17,7 +17,7 @@ def loop_until(start_time, f, test_flag, until):
 
 
 def browser_url_loop_until(start_time, urls, a: Actions.GenericActions.GenericActions, test_flag, until):
-    remain = 5
+    remain = 3
     while remain > 0 and time.time() < start_time + until:
         url = urls.popleft()
         urls.append(url)

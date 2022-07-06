@@ -17,7 +17,7 @@ start_time = time.time()
 
 rootLogger = logging.getLogger()
 rootLogger.setLevel(logging.INFO)
-folder_name = datetime.datetime.now().strftime('test_%Y-%m-%d-%H:%M:%S')
+folder_name = datetime.datetime.now().strftime('test_%Y-%m-%d-%H-%M-%S')
 os.mkdir(folder_name)
 fileHandler = logging.FileHandler("{0}/{1}.log".format(folder_name, 'log'))
 fileHandler.setFormatter(LoggerFormater.BTFormatter())
@@ -34,8 +34,13 @@ def screenshot():
 
 
 ### actual test start!
-test_flag = False
-a = Actions.Macintosh.Mac()
+test_flag = True
+if sys.platform == 'win32':
+    a = Actions.Windows.Windows()
+elif sys.platform == 'darwin':
+    a = Actions.Macintosh.Mac()
+else:
+    raise ValueError('what the hack is this computer?')
 
 logging.info('Battery test started.')
 screenshot()
@@ -100,6 +105,8 @@ while True:
     # Rebase!
     logging.info('Rebasing to original state...')
     a.quit()  # qq
+    if sys.platform == 'win32':
+        a.quit()
     a.quit()  # browser
     a.quit_no_save()  # word
     a.quit()  # ppt
