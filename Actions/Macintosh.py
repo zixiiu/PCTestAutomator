@@ -29,7 +29,7 @@ class Mac(Actions.GenericActions.GenericActions):
         pg.press('return')
 
     def type_and_remove(self):
-        to_type = 'Microsoft Word is the best IDE on this planet! \n'
+        to_type = 'Microsoft Word is the best IDE on this planet! %s \n' % time.strftime('%Y-%m-%d %H:%M:%S')
         pg.typewrite(to_type, interval=0.1)
         # pg.typewrite(['backspace' for _ in range(len(to_type))], interval=0.1)
 

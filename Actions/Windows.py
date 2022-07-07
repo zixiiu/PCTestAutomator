@@ -14,7 +14,7 @@ class Windows(Actions.GenericActions.GenericActions):
         pg.typewrite(['enter'])
 
     def type_and_remove(self):
-        to_type = 'Microsoft Word is the best IDE on this planet! \n'
+        to_type = 'Microsoft Word is the best IDE on this planet! %s \n' % time.strftime('%Y-%m-%d %H:%M:%S')
         pg.typewrite(to_type, interval=0.1)
 
     def launch_ms_word(self):
