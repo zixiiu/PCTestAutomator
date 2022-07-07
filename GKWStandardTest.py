@@ -34,7 +34,7 @@ def screenshot():
 
 
 ### actual test start!
-test_flag = False
+test_flag = False if len(sys.argv) == 1 else True
 if sys.platform == 'win32':
     a = Actions.Windows.Windows()
 elif sys.platform == 'darwin':
@@ -42,7 +42,7 @@ elif sys.platform == 'darwin':
 else:
     raise ValueError('what the hack is this computer?')
 
-logging.info('Battery test started.')
+logging.info('Battery test started. %s Run.'% ('Test' if test_flag else 'Real'))
 screenshot()
 
 loop = 0
