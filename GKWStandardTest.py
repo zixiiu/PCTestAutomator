@@ -34,7 +34,7 @@ def screenshot():
 
 
 ### actual test start!
-test_flag = True
+test_flag = False
 if sys.platform == 'win32':
     a = Actions.Windows.Windows()
 elif sys.platform == 'darwin':
