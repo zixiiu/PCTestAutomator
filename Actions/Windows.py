@@ -1,6 +1,7 @@
 import pyautogui as pg
 import Actions.GenericActions
 import time
+import os
 
 
 class Windows(Actions.GenericActions.GenericActions):
@@ -54,9 +55,9 @@ class Windows(Actions.GenericActions.GenericActions):
     def launch_qq(self):
         self.launch_app_with_search('QQ')
         time.sleep(10)
+        self.input_ent()
         pg.typewrite('IM')
         pg.press('enter')
-
 
     def launch_netease_music(self):
         self.launch_app_with_search('wangyi')
@@ -104,4 +105,11 @@ class Windows(Actions.GenericActions.GenericActions):
         pg.press('tab')
         pg.press('n')
 
+    def quit_everything(self):
+        os.system('taskkill /f /im qq.exe')  # qq
+        self.quit() # browser
+        self.quit_no_save()  # word
+        self.quit() # ppt
+        self.quit_no_save()  # excel
+        os.system('taskkill /im cloudmusic.exe') # netease music
 

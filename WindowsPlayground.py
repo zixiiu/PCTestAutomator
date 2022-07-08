@@ -1,3 +1,4 @@
+import os
 from collections import deque
 
 import Actions
@@ -25,4 +26,5 @@ a = Actions.Windows.Windows()
 # a.launch_browser()
 # browser_url_loop_until(0, urls, a, True, time.time() + 10000 )
 
-a.qq_go_to_chat()
+# a.qq_go_to_chat()
+os.system('taskkill /f /im qq.exe')

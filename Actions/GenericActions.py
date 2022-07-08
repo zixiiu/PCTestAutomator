@@ -72,3 +72,7 @@ class GenericActions():
     def quit_no_save(self):
         pass
 
+    @abstractmethod
+    def quit_everything(self):
+        pass
+

@@ -104,14 +104,8 @@ while True:
 
     # Rebase!
     logging.info('Rebasing to original state...')
-    a.quit()  # qq
-    if sys.platform == 'win32':
-        a.quit()
-    a.quit()  # browser
-    a.quit_no_save()  # word
-    a.quit()  # ppt
-    a.quit_no_save()  # excel
-    a.quit()  # netease
+    a.quit_everything()
+
 
     # loop count!
     loop += 1
