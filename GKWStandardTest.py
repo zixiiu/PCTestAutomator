@@ -43,6 +43,12 @@ else:
     raise ValueError('what the hack is this computer?')
 
 logging.info('Battery test started. %s Run.'% ('Test' if test_flag else 'Real'))
+logging.info('T-minus 3 secs..')
+time.sleep(1)
+logging.info('2..')
+time.sleep(1)
+logging.info('1..')
+time.sleep(1)
 screenshot()
 
 loop = 0
