@@ -38,7 +38,7 @@ class Windows(Actions.GenericActions.GenericActions):
         pg.press('escape')
 
     def launch_ms_excel(self):
-        self.launch_app_with_search('Microsoft Excel')
+        self.launch_app_with_search('Excel')
         pg.sleep(3)
         for _ in range(4):
             pg.press('tab')
