@@ -42,7 +42,7 @@ elif sys.platform == 'darwin':
 else:
     raise ValueError('what the hack is this computer?')
 
-logging.info('Geekrewan Laptop Operation Cycle 1.0 started. %s Run.'% ('Test' if test_flag else 'Real'))
+logging.info('Geekerwan Laptop Operation Cycle 1.0 started. %s Run.'% ('Test' if test_flag else 'Real'))
 logging.info('T-minus 3 secs..')
 time.sleep(1)
 logging.info('2..')
