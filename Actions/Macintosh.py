@@ -82,6 +82,8 @@ class Mac(Actions.GenericActions.GenericActions):
         # pg.hotkey('option', 'o')
 
     def launch_netease_music(self):
+        pg.press('command')
+        pg.sleep(1)
         self.launch_app_with_search('neteasemusic')
         pg.sleep(2)
         pg.press('space')
