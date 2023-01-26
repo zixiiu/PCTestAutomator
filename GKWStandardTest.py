@@ -55,13 +55,20 @@ loop = 0
 loop_start_m = 0
 while True:
     logging.info('Loop %d started.' % loop)
-    # Netease Music
-    logging.info('Starting Netease Music.')
-    a.launch_netease_music()
 
-    # QQ login
-    logging.info('Starting QQ.')
-    a.launch_qq()
+    # # QQ login
+    # logging.info('Starting QQ.')
+    # a.launch_qq()
+    #
+    # IM
+    logging.info('Start IM')
+    # a.qq_go_to_chat()
+    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 60) * 60)
+    logging.info('End IM')
+
+    # Netease Music
+    # logging.info('Starting Netease Music.')
+    # a.launch_netease_music()
 
     # Excel
     logging.info('Starting MS Excel.')
@@ -102,11 +109,6 @@ while True:
     pg.press('space')  # pause the video
     logging.info('End Browser.')
 
-    # IM
-    logging.info('Start IM')
-    a.qq_go_to_chat()
-    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 60) * 60)
-    logging.info('End IM')
 
     # Rebase!
     logging.info('Rebasing to original state...')
