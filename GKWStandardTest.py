@@ -65,6 +65,14 @@ while True:
     # a.launch_qq()
     logging.info('not really, skipped.')
 
+
+    # IM
+    logging.info('Start IM')
+    # a.qq_go_to_chat()
+    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 60) * 60)
+    screenshot()
+    logging.info('End IM')
+
     # Excel
     logging.info('Starting MS Excel.')
     a.launch_ms_excel()
@@ -104,12 +112,7 @@ while True:
     pg.press('space')  # pause the video
     logging.info('End Browser.')
 
-    # IM
-    logging.info('Start IM')
-    a.qq_go_to_chat()
-    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 60) * 60)
-    screenshot()
-    logging.info('End IM')
+
 
     # Rebase!
     logging.info('Rebasing to original state...')

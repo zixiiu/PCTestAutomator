@@ -95,9 +95,14 @@ class Mac(Actions.GenericActions.GenericActions):
         pg.hotkey('command', 'q')
         pg.hotkey('command', 'd')
 
+    def quit_and_replace(self):
+        pg.hotkey('command', 'q')
+        pg.press('return')
+        pg.hotkey('command', 'r')
+
     def quit_everything(self):
         self.quit()  # browser
-        self.quit_no_save()  # word
+        self.quit_and_replace()  # word
         self.quit()  # ppt
         self.quit_no_save()  # excel
         # self.quit()  # netease
