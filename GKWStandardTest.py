@@ -55,37 +55,32 @@ loop = 0
 loop_start_m = 0
 while True:
     logging.info('Loop %d started.' % loop)
-
-    # # QQ login
-    # logging.info('Starting QQ.')
-    # a.launch_qq()
-    #
-    # IM
-    logging.info('Start IM')
-    # a.qq_go_to_chat()
-    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 10) * 60)
-    logging.info('End IM')
-
     # Netease Music
-    # logging.info('Starting Netease Music.')
+    logging.info('Starting Netease Music.')
     # a.launch_netease_music()
+    logging.info('not really, skipped.')
+
+    # QQ login
+    logging.info('Starting QQ.')
+    # a.launch_qq()
+    logging.info('not really, skipped.')
 
     # Excel
     logging.info('Starting MS Excel.')
     a.launch_ms_excel()
-    loop_until(start_time, a.ms_excel_cal, test_flag, (loop_start_m + 20) * 60)
+    loop_until(start_time, a.ms_excel_cal, test_flag, (loop_start_m + 10) * 60)
     screenshot()
     logging.info('End MS Excel.')
     # PPT
     logging.info('Starting MS PPT.')
     a.launch_ms_ppt()
-    loop_until(start_time, a.ms_ppt_actions, test_flag, (loop_start_m + 30) * 60)
+    loop_until(start_time, a.ms_ppt_actions, test_flag, (loop_start_m + 20) * 60)
     screenshot()
     logging.info('End MS PPT.')
     # Word
     logging.info('Starting MS Word.')
     a.launch_ms_word()
-    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 40) * 60)
+    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 30) * 60)
     screenshot()
     logging.info('End MS Word.')
 
@@ -98,17 +93,23 @@ while True:
          'https://www.apple.com.cn/macbook-air-m2/', 'search:iPhone', 'search:Huawei', 'search:Xiaomi'])
 
     a.launch_browser()
-    browser_url_loop_until(start_time, urls, a, test_flag, (loop_start_m + 50) * 60)
+    browser_url_loop_until(start_time, urls, a, test_flag, (loop_start_m + 40) * 60)
     screenshot()
 
     # browser video
     logging.info('Start Browser Video')
-    a.browser_new_tab('https://www.bilibili.com/video/BV1Af4y1f7NJ')
-    wait_until(start_time, test_flag, (loop_start_m + 60) * 60)
+    a.browser_new_tab('https://www.bilibili.com/video/BV1st4y1f7xb')
+    wait_until(start_time, test_flag, (loop_start_m + 50) * 60)
     screenshot()
     pg.press('space')  # pause the video
     logging.info('End Browser.')
 
+    # IM
+    logging.info('Start IM')
+    a.qq_go_to_chat()
+    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 60) * 60)
+    screenshot()
+    logging.info('End IM')
 
     # Rebase!
     logging.info('Rebasing to original state...')

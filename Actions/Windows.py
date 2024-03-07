@@ -8,6 +8,7 @@ class Windows(Actions.GenericActions.GenericActions):
 
     def input_ent(self):
         pg.hotkey('ctrl', '0')
+        time.sleep(1)
 
     def launch_app_with_search(self, kw):
         pg.typewrite(['win'])
@@ -22,6 +23,7 @@ class Windows(Actions.GenericActions.GenericActions):
         self.launch_app_with_search('Word')
         time.sleep(10)
         pg.typewrite(['enter'])
+        time.sleep(1)
         self.input_ent()
 
     def launch_ms_ppt(self):
@@ -29,6 +31,7 @@ class Windows(Actions.GenericActions.GenericActions):
         pg.sleep(10)
         for _ in range(4):
             pg.press('tab')
+            pg.sleep(0.5)
         pg.typewrite(['enter'])
         pg.sleep(1)
 
@@ -43,6 +46,7 @@ class Windows(Actions.GenericActions.GenericActions):
         pg.sleep(3)
         for _ in range(4):
             pg.press('tab')
+            pg.sleep(0.5)
         pg.typewrite(['enter'])
         pg.sleep(1)
         self.input_ent()
@@ -53,19 +57,23 @@ class Windows(Actions.GenericActions.GenericActions):
             pg.press('enter')
 
     def launch_qq(self):
-        self.launch_app_with_search('QQ')
-        time.sleep(10)
+        self.launch_app_with_search('TXQQ')
+        time.sleep(20)
         self.input_ent()
+        time.sleep(1)
         pg.typewrite('IM')
+        time.sleep(1)
         pg.press('enter')
 
     def launch_netease_music(self):
         self.launch_app_with_search('wangyi')
         time.sleep(8)
         pg.hotkey('ctrl', 'p')
+        time.sleep(1)
 
     def launch_browser(self):
         self.launch_app_with_search('Microsoft Edge')
+        time.sleep(5)
         # pg.hotkey('ctrl', 'l')
         # pg.typewrite(url, interval=0.05)
         # pg.typewrite(['enter'])
@@ -90,26 +98,38 @@ class Windows(Actions.GenericActions.GenericActions):
         pg.press('enter')
 
     def qq_go_to_chat(self):
-        pg.hotkey('ctrl', 'alt', 'z')
-        pg.hotkey('ctrl', 'alt', 'z')
-        pg.sleep(1)
-        self.input_ent()
-        pg.typewrite('IM')
-        pg.press('enter')
+        # pg.sleep(3)
+        # pg.hotkey('ctrl', 'alt', 'z')
+        pg.sleep(3)
+        for _ in range(2):
+            pg.hotkey('ctrl', 'alt', 'z')
+            pg.sleep(3)
+            self.input_ent()
+            pg.sleep(3)
+            pg.typewrite('IM')
+            pg.sleep(3)
+            pg.press('enter')
+            pg.sleep(3)
 
     def quit(self):
         pg.hotkey('alt', 'f4')
+        time.sleep(1)
 
     def quit_no_save(self):
         pg.hotkey('alt', 'f4')
+        pg.sleep(10)
         pg.press('tab')
+        pg.sleep(3)
         pg.press('n')
+        pg.sleep(3)
 
     def quit_everything(self):
-        os.system('taskkill /f /im qq.exe')  # qq
+        # os.system('taskkill /f /im qq.exe')  # qq
+        self.quit() # qq chat
+        self.quit() # qq main
         self.quit() # browser
         self.quit_no_save()  # word
         self.quit() # ppt
         self.quit_no_save()  # excel
-        os.system('taskkill /im cloudmusic.exe') # netease music
+        # os.system('taskkill /im cloudmusic.exe') # netease music
 
