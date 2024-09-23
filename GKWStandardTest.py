@@ -69,26 +69,26 @@ while True:
     # IM
     logging.info('Start IM')
     # a.qq_go_to_chat()
-    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 60) * 60)
+    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 10) * 60)
     screenshot()
     logging.info('End IM')
 
     # Excel
     logging.info('Starting MS Excel.')
     a.launch_ms_excel()
-    loop_until(start_time, a.ms_excel_cal, test_flag, (loop_start_m + 10) * 60)
+    loop_until(start_time, a.ms_excel_cal, test_flag, (loop_start_m + 20) * 60)
     screenshot()
     logging.info('End MS Excel.')
     # PPT
     logging.info('Starting MS PPT.')
     a.launch_ms_ppt()
-    loop_until(start_time, a.ms_ppt_actions, test_flag, (loop_start_m + 20) * 60)
+    loop_until(start_time, a.ms_ppt_actions, test_flag, (loop_start_m + 30) * 60)
     screenshot()
     logging.info('End MS PPT.')
     # Word
     logging.info('Starting MS Word.')
     a.launch_ms_word()
-    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 30) * 60)
+    loop_until(start_time, a.type_and_remove, test_flag, (loop_start_m + 40) * 60)
     screenshot()
     logging.info('End MS Word.')
 
@@ -101,13 +101,13 @@ while True:
          'https://www.apple.com.cn/macbook-air-m2/', 'search:iPhone', 'search:Huawei', 'search:Xiaomi'])
 
     a.launch_browser()
-    browser_url_loop_until(start_time, urls, a, test_flag, (loop_start_m + 40) * 60)
+    browser_url_loop_until(start_time, urls, a, test_flag, (loop_start_m + 50) * 60)
     screenshot()
 
     # browser video
     logging.info('Start Browser Video')
     a.browser_new_tab('https://www.bilibili.com/video/BV1st4y1f7xb')
-    wait_until(start_time, test_flag, (loop_start_m + 50) * 60)
+    wait_until(start_time, test_flag, (loop_start_m + 60) * 60)
     screenshot()
     pg.press('space')  # pause the video
     logging.info('End Browser.')

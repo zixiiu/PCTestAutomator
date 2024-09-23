@@ -50,10 +50,12 @@ class Windows(Actions.GenericActions.GenericActions):
         pg.typewrite(['enter'])
         pg.sleep(1)
         self.input_ent()
+        pg.sleep(1)
 
     def ms_excel_cal(self):
         for i in ['B', 'E', 'H']:
-            pg.typewrite('=SUM(%s2:%s15000)' % (i, i))
+            pg.sleep(0.5)
+            pg.typewrite('=SUM(%s2:%s15000)' % (i, i), interval=0.1)
             pg.press('enter')
 
     def launch_qq(self):
@@ -125,8 +127,8 @@ class Windows(Actions.GenericActions.GenericActions):
 
     def quit_everything(self):
         # os.system('taskkill /f /im qq.exe')  # qq
-        self.quit() # qq chat
-        self.quit() # qq main
+        # self.quit() # qq chat
+        # self.quit() # qq main
         self.quit() # browser
         self.quit_no_save()  # word
         self.quit() # ppt
