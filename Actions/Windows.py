@@ -11,7 +11,9 @@ class Windows(Actions.GenericActions.GenericActions):
         time.sleep(1)
 
     def launch_app_with_search(self, kw):
+        self.input_ent()
         pg.typewrite(['win'])
+        time.sleep(1)
         pg.typewrite(kw, interval=0.05)
         pg.typewrite(['enter'])
 
