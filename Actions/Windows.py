@@ -31,7 +31,7 @@ class Windows(Actions.GenericActions.GenericActions):
     def launch_ms_ppt(self):
         self.launch_app_with_search('Powerpoint')
         pg.sleep(10)
-        for _ in range(4):
+        for _ in range(3):
             pg.press('tab')
             pg.sleep(0.5)
         pg.typewrite(['enter'])
@@ -46,7 +46,7 @@ class Windows(Actions.GenericActions.GenericActions):
     def launch_ms_excel(self):
         self.launch_app_with_search('Excel')
         pg.sleep(10)
-        for _ in range(4):
+        for _ in range(3):
             pg.press('tab')
             pg.sleep(0.5)
         pg.typewrite(['enter'])
